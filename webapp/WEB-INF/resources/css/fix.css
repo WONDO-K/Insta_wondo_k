@@ -1,0 +1,84 @@
+@charset "UTF-8";
+.fix
+{
+	margin: 0 auto;
+	width: 1000px;
+	height: 50px;
+}
+.fix_title
+{
+  font-family: 'Dancing Script', cursive;
+  font-size: 30px;
+  width: 165px;
+  margin: 20px 20px;
+}
+.fix_search_bar
+{
+  width: 250px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid black;
+  /*  border: solid 1px rgba(0, 0, 0, 0.3); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: -55px 363px;
+}
+.fix_search
+{
+  width: 50px;
+  border: none; 
+  -webkit-appearance: none; 
+  text-align: center;
+  margin-left: 10px;
+  overflow: auto; 
+  z-index: -1;
+  font-size: 15px;
+}
+.fas fa-search
+{
+  font-size:  15px;
+}
+.icon
+{
+	width: 150px;
+	height: 40px;
+	float: right;
+	margin: 15px 50px;
+}
+.fix_message
+{
+  font-size: 30px;
+  margin: 0 10px;
+  float: left;
+}
+.fix_notice
+{
+  font-size: 30px;
+  float: left;
+  margin: 0 10px;
+}
+.fix_profile
+{
+	position: relative;
+	width: 33px;
+	height: 33px;
+	border-radius: 50%; /*둥그런 원으로 만들기 위함*/
+	overflow: hidden;
+	float : left;
+	margin : 5px 10px 0 5px;
+}
+.fix_profile img
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.fix_logout
+{
+	float: right;
+}

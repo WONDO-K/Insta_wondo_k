@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="Reply">
+ 	<resultMap id="replyMap" type="com.insta.reply.vo.ReplyVo">
+ 		<result property="reply_idx" column="REPLY_IDX" javaType="int"/>
+ 		<result property="reply_writer" column="REPLY_WRITER" javaType="string"/>
+ 		<result property="post_num" column="POST_NUM" javaType="int"/>
+ 		<result property="reply_cont" column="REPLY_CONT" javaType="string"/>
+ 		<result property="target_id" column="TARGET_ID" javaType="string"/>
+ 		<result property="reply_class" column="REPLY_CLASS" javaType="int"/>
+ 		<result property="reply_order" column="REPLY_ORDER" javaType="int"/>
+ 		<result property="grp_num" column="GRP_NUM" javaType="int"/>
+ 		<result property="regdate" column="REGDATE" javaType="string"/>
+ 	</resultMap>
+ 	
+	 <select  id          = "ReplyListSP"
+          statementType = "CALLABLE"
+          parameterType = "hashmap"
+          resultType    = "com.insta.reply.vo.ReplyVo"  >
+        {CALL PKG_REPLY.PROC_REPLY_LIST(
+        	#{post_num, mode=IN, jdbcType=INTEGER},
+        	#{result, mode=OUT, jdbcType=CURSOR,
+        		javaType=ResultSet, resultMap=replyMap}
+        )}
+ 	
+ 	</select>
+ 	
+ 	<select id="ReplyList"
+ 		resultType="com.insta.reply.vo.ReplyVo">
+ 	   SELECT *
+       FROM MREPLY R, MPOST P
+       WHERE P.POST_NUM = #{post_num}
+       AND   P.POST_NUM = R.POST_NUM
+ 	</select>
+ 	
+ 	<select id="ReplyViewList"
+ 		resultType="com.insta.reply.vo.ReplyVo">
+ 		SELECT * 
+		FROM MREPLY
+		WHERE POST_NUM = #{post_num}		
+ 	</select>
+ </mapper>

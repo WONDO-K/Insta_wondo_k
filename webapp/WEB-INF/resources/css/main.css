@@ -1,0 +1,163 @@
+@charset "UTF-8";
+#feed{ 
+	margin: 10px 10px 10px 470px;
+	width: 600px;
+	height: 800px;
+	border: 1px solid black; 
+	float : left;
+}
+
+#nickname_click { 
+	pointer-events: none;
+}
+ 
+#place{
+	pointer-events: none;
+}
+ 
+#profile
+{
+	position: relative;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%; /*둥그런 원으로 만들기 위함*/
+	overflow: hidden;
+	float : left;
+	margin : 5px 10px 0 5px;
+}
+
+#profile img
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+#postimg{
+	margin: -10px 0 0 0 ;
+	width: 600px;
+	height: 525px;
+}
+
+.postlike{
+	font-size: 20px;	
+	margin: 0 10px;
+	float: left;
+}
+.postreply{
+	font-size: 20px;	
+	margin: 0 10px;
+	float: left;
+}
+.postdm{
+	font-size: 20px;	
+	margin: 0 10px;
+	float: left;
+}
+
+
+#likeprofile{
+	clear : both;
+	position: relative;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%; /*둥그런 원으로 만들기 위함*/
+	overflow: hidden;
+	float : left;
+	margin : 5px 10px 0 5px;
+	
+}
+#likeprofile img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+#likepeople {
+	clear : both;
+}
+#likepeople input{
+	pointer-events: none;
+}
+#wholike{
+	width:250px;
+}
+#replyarea{
+	margin : 0 0 0 10px;
+	pointer-events: none;
+	clear : both;
+}
+#replyarea input{
+	width : 100px;
+}
+#replyprofile{
+	clear : both;
+	position: relative;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%; /*둥그런 원으로 만들기 위함*/
+	overflow: hidden;
+	float : left;
+	margin : 5px 10px 0 5px;
+}
+#replyprofile img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+#side{
+	margin: 10px 0 0 -10px;
+	width : 400px;
+	height: 420px;
+	border: 1px solid black; 
+	float: left;
+	position: fixed; right:400px;
+}
+#recommend{
+	margin: 0 0 0 5px; 
+	clear:both;
+}
+#allview{
+	border: none;
+    outline:none;
+}
+#allview:hover{
+	color:pink;
+}
+ul{
+   list-style:none;
+   float:left;
+   }
+
+#recommenduser li{
+	margin: 0 0 0 -45px; 
+	float:left;
+}
+#follow{
+
+	border: none;
+    outline:none;
+    color:blue;
+}
+#follow:hover{
+	color:red;
+}
+#footermenu{
+	margin: 40px 0 0 0;
+	font-size:12px;
+	
+}
+#copyright{
+
+	margin: 8px 0 0 65px; 
+	font-size:15px;
+}
+

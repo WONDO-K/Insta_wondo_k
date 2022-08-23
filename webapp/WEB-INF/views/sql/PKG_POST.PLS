@@ -1,0 +1,7 @@
+create or replace PACKAGE PKG_POST AS 
+
+    -- 동호 -----------------------------------------------------------
+    
+    PROCEDURE PROC_POST_LIST( O_CUR     OUT SYS_REFCURSOR );
+
+END PKG_POST;

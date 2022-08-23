@@ -1,0 +1,97 @@
+@charset "UTF-8";
+#imgarea{
+	margin: 0 0 0 465px;
+	width:925px;
+	height:525px;	
+}
+#postimg{
+	float:left;
+	width:600px;
+	height:525px;	
+}
+#profile
+{
+	position: relative;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%; /*둥그런 원으로 만들기 위함*/
+	overflow: hidden;
+	float : left;
+	margin : 5px 10px 0 5px;
+}
+#profile_mini{
+	position: relative;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%; /*둥그런 원으로 만들기 위함*/
+	overflow: hidden;
+	float : left;
+	margin : 5px 10px 0 5px;
+}
+
+#profile img
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+#profile_mini img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	
+}
+
+
+#replyarea{
+	float:left;
+	width:323px;
+	height:523px;
+	border: 1px solid red;
+}
+#underfeed{
+	margin: 0 0 0 465px;
+	width: 927px;
+}
+#underpicture{
+	width : 303px;
+	height: 180px;
+	border: 1px solid red;
+}
+#reply{
+	float:left;
+}
+
+
+.postlike{
+	font-size: 20px;	
+	margin: 0 10px;
+	float: left;
+}
+.postreply{
+	font-size: 20px;	
+	margin: 0 10px;
+	float: left;	
+}
+.postdm{
+	font-size: 20px;	
+	margin: 0 10px;
+	float: left;
+}
+#replycont {
+  width:255px;
+  height:30px;
+  font-size:10px;
+}
+
+#inputreply{
+	margin-top: 270px;
+}
+

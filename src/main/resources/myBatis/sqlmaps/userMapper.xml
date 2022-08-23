@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="User">
+   
+   <!-- 우곤 -->
+   
+   <select id="Login"
+       parameterType = "hashmap"
+       resultType    = "com.green.user.vo.UserVo">
+       SELECT   EMAIL, NICKNAME, PASSWORD, NAME, TEL, JOINDATE, P_THUMBNAIL, P_INTRODUCE
+        FROM    MJOIN
+        WHERE   EMAIL    =  #{ email }
+        AND     PASSWORD  =  #{ password }   
+   </select>
+   
+   <insert id="InsertUser" parameterType = "com.green.user.vo.UserVo">
+     INSERT   INTO   MJOIN (EMAIL, NICKNAME, PASSWORD, NAME, TEL)
+       VALUES ( #{email}, #{nickname}, #{password}, #{name}, #{tel})
+   </insert>
+   
+   <select id="idChk"  parameterType = "com.green.user.vo.UserVo" resultType="int">
+   		SELECT 	COUNT(*)
+   		FROM   	MJOIN
+   		WHERE	EMAIL = #{email}
+   </select>
+  
+   <select id="nickChk"  parameterType = "com.green.user.vo.UserVo" resultType="int">
+   		SELECT 	COUNT(*)
+   		FROM   	MJOIN
+   		WHERE	NICKNAME = #{nickname}
+   </select>
+   
+   <!-- 동호 -->
+   <resultMap id="userMap" type="com.green.user.vo.UserVo">
+		<result property="email" column="EMAIL" javaType="string"/>
+		<result property="nickname" column="NICKNAME" javaType="string"/>
+		<result property="password" column="PASSWORD" javaType="string"/>
+		<result property="name" column="NAME" javaType="string"/>
+		<result property="tel" column="TEL" javaType="string"/>
+		<result property="joindate" column="JOINDATE" javaType="string"/>
+		<result property="p_thumbnail" column="P_THUMBNAIL" javaType="string"/>
+		<result property="p_introduce" column="P_INTRODUCE" javaType="string"/>
+	</resultMap>
+	
+	<select  id          = "UserRecommendListSP"
+            statementType = "CALLABLE"
+            parameterType = "hashmap"
+            resultType    = "com.green.user.vo.UserVo"  >
+       { CALL PKG_USER.PROC_USER_RECOMMEND(
+           #{result,  mode=OUT, jdbcType=CURSOR,
+               javaType=ResultSet, resultMap=userMap  }
+       ) }
+   </select>
+   
+   <!-- 남욱 -->
+   <resultMap id="UserMap"
+      type="com.green.user.vo.UserVo">
+     <result property="email"       		 column="EMAIL"      			javaType="string" />
+     <result property="nickname"  			 column="NICKNAME"    			javaType="string" />
+     <result property="password"    		 column="PASSWORD"    			javaType="string" />
+     <result property="name"     			 column="NAME"        			javaType="string" />
+     <result property="tel"    	 			 column="TEL"    				javaType="string" />
+     <result property="joindate"    		 column="JOINDATE"   		    javaType="string" />
+     <result property="p_thumbnail"			 column="P_THUMBNAIL" 			javaType="string" />
+     <result property="p_thumbnail_filename" column="P_THUMBNAIL_FILENAME" 	javaType="string" />
+     <result property="p_introduce" 		 column="P_INTRODUCE"			javaType="string" />
+   </resultMap>
+   
+   <select id			 ="UserView"
+   		   statementType = "CALLABLE"
+           parameterType = "hashmap"
+      	   resultType="com.green.user.vo.UserVo">
+     	{ CALL PKG_USER.PROC_USER_VIEW(
+     		#{email,   mode=IN,  jdbcType=VARCHAR    },
+     		#{result,  mode=OUT, jdbcType=CURSOR,
+               javaType=ResultSet, resultMap=UserMap }
+        ) }
+   </select>
+   
+   <update id="UserUpdate"
+   		   statementType = "CALLABLE"
+           parameterType = "hashmap">
+		{ CALL PKG_USER.PROC_USER_UPDATE(	
+			#{email,	  	 		  mode=IN,  jdbcType=VARCHAR },
+			#{nickname,  	 		  mode=IN,  jdbcType=VARCHAR },
+			#{password,  	 		  mode=IN,  jdbcType=VARCHAR },
+			#{tel,   		 		  mode=IN,  jdbcType=VARCHAR },
+			#{p_introduce,   		  mode=IN,  jdbcType=VARCHAR },
+			#{p_thumbnail,   		  mode=IN,  jdbcType=VARCHAR },
+			#{p_thumbnail_filename,   mode=IN,  jdbcType=VARCHAR }
+		)}
+   
+   </update>
+   
+</mapper> 
+
+
+
+
+
+ 

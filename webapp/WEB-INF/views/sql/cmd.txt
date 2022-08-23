@@ -1,0 +1,16 @@
+C:\Users\pc>sqlplus /nolog
+
+SQL*Plus: Release 11.2.0.2.0 Production on 금 1월 7 16:25:19 2022
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+SQL> conn /as sysdba
+Connected.
+
+SQL> create user springproject identified by 1234;
+
+User created.
+
+SQL> grant connect, resource, dba to springproject;
+
+Grant succeeded.
